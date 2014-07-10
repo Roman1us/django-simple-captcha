@@ -90,10 +90,10 @@ def captcha_image(request, key, scale=1):
         image = f(image)
 
     out = StringIO()
-    image.save(out, "PNG")
+    image.save(out, "GIF")
     out.seek(0)
 
-    response = HttpResponse(content_type='image/png')
+    response = HttpResponse(content_type='image/gif')
     response.write(out.read())
     response['Content-length'] = out.tell()
 
